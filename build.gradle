@@ -1,23 +1,28 @@
 plugins {
-    id 'java-library'
+    id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
 
+compileTestJava {
+    options.encoding = 'UTF-8' //так как винда не правильно кодирует кириллицу
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
 dependencies {
-    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
-    implementation 'org.testng:testng:7.1.0'
-    implementation group: 'com.codeborne', name: 'selenide', version: '5.21.0',
-            'org.junit.jupiter:junit-jupiter-api:5.7.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.1',
-            'org.slf4j:slf4j-api:1.7.30' ,
-            'org.slf4j:slf4j-simple:1.7.30'
+    // Selenide
+    testImplementation("com.codeborne:selenide:5.21.0")
+    testRuntimeOnly("org.slf4j:slf4j-simple:1.7.30") //пишет лог при запуске тестов
+
+    // JUnit 5
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform{}
 }
