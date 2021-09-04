@@ -8,3 +8,5 @@ out
 allure-results
 .gitattributes
 settings.gradle
+gradlew
+gradlew.bat
