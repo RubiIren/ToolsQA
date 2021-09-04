@@ -20,20 +20,20 @@ public class FormTests {
 
             open("https://demoqa.com/automation-practice-form");
 
-            $("[id=firstName]").setValue("Name");
-            $("[id=lastName]").setValue("Surname");
-            $("[id=userEmail]").setValue("podic58232@itwbuy.com");
+            $("#firstName").setValue("Name");
+            $("#lastName").setValue("Surname");
+            $("#userEmail").setValue("podic58232@itwbuy.com");
             $("[for=gender-radio-2").click();
-            $("[id=userNumber]").setValue("8123456789");
+            $("#userNumber").setValue("8123456789");
             $("[id=state]").click();
-            $("[id=react-select-3-option-2]").click();
+            $("[id=react-select-3-option-0]").click();
             $("[id=city]").click();
             $("[id=react-select-4-option-0]").click();
-            $("[id=submit]").click();
+            $("#submit").click();
 
-            $(byClassName("table-responsive")).shouldHave(text("Name Surname"),
+            $(".table-responsive").shouldHave(text("Name Surname"),
                     text("podic58232@itwbuy.com"),text("Female"),
-                    text("8123456789"), text("Haryana Karnal"));
+                    text("8123456789"), text("NCR Delhi"));
 
         }
     }
