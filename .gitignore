@@ -6,3 +6,5 @@ build
 video
 out
 allure-results
+.gitattributes
+settings.gradle
