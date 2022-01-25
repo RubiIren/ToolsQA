@@ -34,7 +34,9 @@ public class FormTests {
         $(".react-datepicker__day--022").click();
         $("[for=hobbies-checkbox-1").click();
         $("[for=hobbies-checkbox-3").click();
-        $("#uploadPicture").uploadFromClasspath("cat.jpg");
+        //$("#uploadPicture").uploadFromClasspath("cat.jpg");
+        File img = new File("src/test/resources/cat.jpg");
+        $("#uploadPicture").uploadFile(img);
         $("[id=state]").click();
         $("[id=react-select-3-option-0]").click();
         $("[id=city]").click();
