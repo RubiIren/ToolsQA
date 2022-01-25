@@ -35,7 +35,7 @@ public class FormTests {
         $("[for=hobbies-checkbox-1").click();
         $("[for=hobbies-checkbox-3").click();
         //$("#uploadPicture").uploadFromClasspath("cat.jpg");
-        File img = new File("src/test/resources/cat.jpg");
+        File img = new File("src/test/resources/VKrbT-GlAnk.jpg");
         $("#uploadPicture").uploadFile(img);
         $("[id=state]").click();
         $("[id=react-select-3-option-0]").click();
